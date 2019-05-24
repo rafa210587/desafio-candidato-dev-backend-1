@@ -1,0 +1,67 @@
+spring:   
+  application:
+    name: teste-desafio
+    
+thcepdetails:
+ endpoint:
+  th-api: https://zuul.trusthub.com.br/orchestrator/v1/obter-endereco-por-cep/
+ th-test-api: 09691-020 
+ 
+logging:
+  level:
+    com.self.sprintboot.learning.employee: DEBUG
+    
+management:
+  endpoint:
+    health:
+      show-details: always    
+ 
+---
+# Items that apply to ALL profiles:   
+eureka:
+  instance:
+    appname: teste-desafio
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8080
+  
+---
+
+spring:
+  profiles: teste-desafio-replica01
+  
+eureka:        
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+server:
+  port: 8081
+     
+---
+spring:
+  profiles: teste-desafio-replica02
+eureka:        
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+server:
+  port: 8082
+  
+
+
+
+  
+

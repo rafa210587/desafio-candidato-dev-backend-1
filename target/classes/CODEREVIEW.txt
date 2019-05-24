@@ -1,0 +1,32 @@
+1)
+- N�o possui Java Doc em nenhuma classe.
+- Classes nomeadas em plural quando deveriam ser nomeadas no singular.
+- N�o esta seguindo os conceitos de IoC, classes altamente acopladas e minimamente coesas.
+- Faltou injecao de dependencia na ProcessRuleServices
+- Faltou controlar a instancia do objeto para garantir o uso de IoC, que seria naturalmente gerenciado pelo Spring.
+- Variaveis na processAddressValue em maiusculo nao respeitando camelCase e algumas totalmente em minusculo.
+- callExternarRestService escrito errado o correto seria callExternalRestService
+- linha 36 nunca ira entrar no while pois calls nunca sera maior do que countMaxCalls
+- N�o estaem camelCase ThCepDetailsApplication, o correto seria THCepDetailsApplication(Trust Hub).
+- PojoExample n�o deveria ter sido comitado pois nao tem nada em sua classe
+- Tests n�o estao testando nada
+- Os packages n�o estao seguindo a hierarquia convencional do java(todos os pacotes estao diretamente em srmasset ao inves de estarem abaixo de thcepdetails) sem nenhuma customizacao, nada ira rodar corretamente nem ser carregado pelo SPRING.
+
+2)
+-  Spring Actuator resolve essa questão, possuindo tudo o que é necessário, pelo /actuator/health, 
+como foi solicitado que fosse feito no /actuator/info eu fiz uma modificação na mesma para que atendesse ao que foi solicitado.
+
+4) 
+- O próprio spring possui a implementação necessária para cache com a anotação @Cacheable, 
+só havia necessidade de configurar a aplicação pra aceitar o mesmo e dar um id para os metodos que poderia utilizar de cache.
+Havia a opção de usar a implementação de getCache do próprio Hystrix, mas seria necessário a implementação de algum sistema externa(redis, mongo ou até elasticSearch), pra esse caso achei melhor utilizar o @Cacheable.
+
+5) 
+- Fiz um projeto para subir um Eureka Server, se necessário posso enviar o mesmo também.
+
+6) 
+- Com o Hystrix é possivel fazer uma implementação de cache utilizando também o REDIS como um sistema de cache externo, 
+trazendo assim possiveis resultados e somente em ultimo caso uma mensagem de erro genérica informando o client.
+
+
+PS. Eu deletei o que não era utilizado e renomeei o que parecia estar fora de uma padronização.
