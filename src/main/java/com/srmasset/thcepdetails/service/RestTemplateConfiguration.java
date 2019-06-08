@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * class to enable @Autowired dependcy injection of the RestTemplate
+ * class to enable @Autowired dependency injection of the RestTemplate
  */
 
 @Component
