@@ -1,16 +1,16 @@
 1)
-- N�o possui Java Doc em nenhuma classe.
+- Nao possui Java Doc em nenhuma classe.
 - Classes nomeadas em plural quando deveriam ser nomeadas no singular.
-- N�o esta seguindo os conceitos de IoC, classes altamente acopladas e minimamente coesas.
+- Nao esta seguindo os conceitos de IoC, classes altamente acopladas e minimamente coesas.
 - Faltou injecao de dependencia na ProcessRuleServices
 - Faltou controlar a instancia do objeto para garantir o uso de IoC, que seria naturalmente gerenciado pelo Spring.
 - Variaveis na processAddressValue em maiusculo nao respeitando camelCase e algumas totalmente em minusculo.
 - callExternarRestService escrito errado o correto seria callExternalRestService
 - linha 36 nunca ira entrar no while pois calls nunca sera maior do que countMaxCalls
-- N�o estaem camelCase ThCepDetailsApplication, o correto seria THCepDetailsApplication(Trust Hub).
-- PojoExample n�o deveria ter sido comitado pois nao tem nada em sua classe
-- Tests n�o estao testando nada
-- Os packages n�o estao seguindo a hierarquia convencional do java(todos os pacotes estao diretamente em srmasset ao inves de estarem abaixo de thcepdetails) sem nenhuma customizacao, nada ira rodar corretamente nem ser carregado pelo SPRING.
+- Nao esta em camelCase ThCepDetailsApplication, o correto seria THCepDetailsApplication(Trust Hub).
+- PojoExample nao deveria ter sido comitado pois nao tem nada em sua classe
+- Tests nao estao testando nada
+- Os packages nao estao seguindo a hierarquia convencional do java(todos os pacotes estao diretamente em srmasset ao inves de estarem abaixo de thcepdetails) sem nenhuma customizacao, nada ira rodar corretamente nem ser carregado pelo SPRING.
 
 2)
 -  Spring Actuator resolve essa questão, possuindo tudo o que é necessário, pelo /actuator/health, 
